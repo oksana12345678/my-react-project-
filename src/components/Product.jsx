@@ -1,5 +1,5 @@
 // src/components/Product.jsx
-
+import PropTypes from "prop-types";
 // export const Product = (props) => {
 //   return (
 //     <div>
@@ -20,4 +20,9 @@ export const Product = ({ name, imgUrl, price }) => {
   );
 };
 
+Product.propTypes = {
+  name: PropTypes.string.isRequired,
+  imgUrl: PropTypes.string,
+  price: PropTypes.number.isRequired,
+};
 export default Product;
