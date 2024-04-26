@@ -56,21 +56,47 @@ import Product from "./Product";
 // src/components/App.jsx
 
 // import { Alert } from "./Alert";
-
+import { useState } from "react";
 import LoginForm from "./Form/Form";
+import SearchBar from "./SearchBar/SearchBar";
+import LangSwitcher from "./LangSwitcher/LangSwitcher";
+import Coffee from "./Coffee/Coffee";
+import CheckBox from "./CheckBox/CheckBox";
 
 export const App = () => {
-  // Колбек-функція для обробки сабміту форми
-  const handleLogin = (userData) => {
-    // Виконуємо необхідні операції з даними
-    console.log(userData);
+  const [values, setValues] = useState({
+    login: "",
+    password: "",
+  });
+  const handleSubmit = (evt) => {
+    evt.preventDefault();
+
+    console.log(values);
+    setValues({
+      login: "",
+      password: "",
+    });
   };
+  const [lang, setLang] = useState("uk");
+
+  const [coffeeSize, setCoffeeSize] = useState("sm");
+
+  const [hasAccepted, setHasAccepted] = useState(" ");
 
   return (
     <div>
       <h1>Please login to your account!</h1>
-      {/* Передаємо колбек як пропс форми */}
-      <LoginForm onLogin={handleLogin} />
+      <LoginForm
+        onLogin={setValues}
+        values={values}
+        submitForm={handleSubmit}
+      />
+      <SearchBar />
+      <p>Selected language: {lang}</p>
+      <LangSwitcher value={lang} onSelect={setLang} />
+      <Coffee checked={setCoffeeSize} />
+      <p>Selected language: {coffeeSize}</p>
+      <CheckBox checked={hasAccepted} setChange={setHasAccepted} />
     </div>
   );
 };
