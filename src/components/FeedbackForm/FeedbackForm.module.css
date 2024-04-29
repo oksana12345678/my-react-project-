@@ -1,0 +1,23 @@
+.form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.formItem {
+  padding-left: 8px;
+  height: 40px;
+  border-radius: 8px;
+  outline: transparent;
+  border: 1px solid #3939d3;
+  margin-bottom: 16px;
+}
+.buttonSubmit {
+  background-color: violet;
+  color: white;
+  margin-bottom: 40px;
+}
+.error {
+  background-color: red;
+  color: aliceblue;
+}
