@@ -7,22 +7,8 @@ import CheckBox from "./CheckBox/CheckBox";
 import axios from "axios";
 import { ColorRing } from "react-loader-spinner";
 import ArticlesList from "./ArticlesList/ArticlesList";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 
 export const App = () => {
-  const notify = () =>
-    toast("🦄 Wow so easy!", {
-      position: "top-right",
-      autoClose: 5000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "colored",
-      transition: Bounce,
-    });
   const [values, setValues] = useState({
     login: "",
     password: "",
